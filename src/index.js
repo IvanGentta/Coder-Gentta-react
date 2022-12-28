@@ -1,13 +1,24 @@
-import React from 'react';
-import ReactDOM from 'react-dom/client';
-import './index.css';
-import App from './App';
-import reportWebVitals from './reportWebVitals';
+//Modulos
+import React from "react";
+import ReactDOM from "react-dom/client";
 
-const root = ReactDOM.createRoot(document.getElementById('root'));
+//Estilos
+import "./index.css";
+
+//Componentes
+import NavBar from "./components/NavBar";
+
+//Core
+import reportWebVitals from "./reportWebVitals";
+import ItemListContainer from "./components/ItemListContainer";
+import Footer from "./components/Footer";
+
+const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <React.StrictMode>
-    <App />
+    <NavBar />
+    <ItemListContainer greeting="BIENVENIDOS AL E-COMMERCE EL CUAL AUN NO ME DECIDO SI VA A VENDER ROPA FACHERA O BEBIDAS ALCOHOLICAS" />
+    <Footer />
   </React.StrictMode>
 );
 
