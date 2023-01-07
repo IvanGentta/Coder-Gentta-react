@@ -1,4 +1,6 @@
 import CartWidget from "./CartWidget";
+import logoBebida from "../img/bebidasLogo.png";
+import logoRopa from "../img/logo-ropa.png";
 
 const NavBar = () => {
   return (
@@ -6,14 +8,10 @@ const NavBar = () => {
       <div className="h-20 w-full px-4 flex justify-between items-center bg-violet-500">
         <div className="flex items-center">
           <p className="px-2 text-xl">¿</p>
-          <img
-            src={require("../img/logo-ropa.png")}
-            alt="posible logo tienda"
-            className="w-12 h-12"
-          />
+          <img src={logoRopa} alt="posible logo tienda" className="w-12 h-12" />
           <p className="px-2 text-xl">O</p>
           <img
-            src={require("../img/bebidasLogo.png")}
+            src={logoBebida}
             alt="posible logo tienda"
             className="w-22 h-12"
           />
