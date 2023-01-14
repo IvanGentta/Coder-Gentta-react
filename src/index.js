@@ -1,24 +1,44 @@
 //Modulos
 import React from "react";
 import ReactDOM from "react-dom/client";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 
 //Estilos
 import "./index.css";
 
-//Componentes
-import NavBar from "./components/NavBar";
-
 //Core
 import reportWebVitals from "./reportWebVitals";
+
+//Componentes
+import NavBar from "./components/NavBar";
+import Background from "./components/Background";
+import Home from "./components/Home";
 import ItemListContainer from "./components/ItemListContainer";
+import ItemDetailContainer from "./components/ItemDetailContainer";
+import Categorias from "./components/Categorias";
+import AboutUs from "./components/AboutUs";
 import Footer from "./components/Footer";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <React.StrictMode>
-    <NavBar />
-    <ItemListContainer greeting="BIENVENIDOS AL E-COMMERCE EL CUAL AUN NO ME DECIDO SI VA A VENDER ROPA FACHERA O BEBIDAS ALCOHOLICAS" />
-    <Footer />
+    <BrowserRouter>
+      <NavBar />
+      <Background className="fondo">
+        <Routes>
+          <Route exact path="/" element={<Home />} />
+          <Route exact path="/productos" element={<ItemListContainer />} />
+          <Route
+            exact
+            path="/producto/:productoId"
+            element={<ItemDetailContainer />}
+          />
+          <Route exact path="/categorias" element={<Categorias />} />
+          <Route exact path="/nosotros" element={<AboutUs />} />
+        </Routes>
+      </Background>
+      <Footer />
+    </BrowserRouter>
   </React.StrictMode>
 );
 

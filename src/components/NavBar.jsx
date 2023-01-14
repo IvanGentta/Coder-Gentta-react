@@ -1,33 +1,34 @@
 import CartWidget from "./CartWidget";
-import logoBebida from "../img/bebidasLogo.png";
 import logoRopa from "../img/logo-ropa.png";
+import { Link } from "react-router-dom";
 
 const NavBar = () => {
   return (
-    <nav>
-      <div className="h-20 w-full px-4 flex justify-between items-center bg-violet-500">
-        <div className="flex items-center">
-          <p className="px-2 text-xl">¿</p>
-          <img src={logoRopa} alt="posible logo tienda" className="w-12 h-12" />
-          <p className="px-2 text-xl">O</p>
-          <img
-            src={logoBebida}
-            alt="posible logo tienda"
-            className="w-22 h-12"
-          />
-          <p className="px-2 text-xl">?</p>
-        </div>
+    <nav className="h-20 w-full px-4 flex justify-between items-center bg-violet-500 fixed">
+      <div className="flex items-center">
+        <img src={logoRopa} alt="posible logo tienda" className="w-12 h-12" />
+      </div>
+      <Link to="/">
         <p className="cursor-pointer font-bold hover:border-b-2 border-violet-900">
           Home
         </p>
+      </Link>
+      <Link to="/productos">
+        <p className="cursor-pointer font-bold hover:border-b-2 border-violet-900">
+          Productos
+        </p>
+      </Link>
+      <Link to="/categorias">
         <p className="cursor-pointer font-bold hover:border-b-2 border-violet-900">
           Categorias
         </p>
+      </Link>
+      <Link to="/nosotros">
         <p className="cursor-pointer font-bold hover:border-b-2 border-violet-900">
           Nosotros
         </p>
-        <CartWidget cantidad="23" />
-      </div>
+      </Link>
+      <CartWidget cantidad="23" />
     </nav>
   );
 };

@@ -3,9 +3,11 @@ import ItemList from "./ItemList";
 
 const ItemListContainer = (props) => {
   return (
-    <div className="flex flex-col justify-center min-h-screen">
-      <h1 className="text-2xl text-center">{props.greeting}</h1>
-      <div>
+    <div className="flex flex-col items-center w-full min-h-screen pt-20">
+      <h1 className="text-2xl md:text-6xl text-center py-4 md:py-8 text-white">
+        Todos nuestros productos
+      </h1>
+      <div className="">
         <ItemList />
       </div>
     </div>
