@@ -6,7 +6,9 @@ const NavBar = () => {
   return (
     <nav className="h-20 w-full px-4 flex justify-between items-center bg-violet-500 fixed">
       <div className="flex items-center">
-        <img src={logoRopa} alt="posible logo tienda" className="w-12 h-12" />
+        <Link to="/">
+          <img src={logoRopa} alt="posible logo tienda" className="w-12 h-12" />
+        </Link>
       </div>
       <Link to="/">
         <p className="cursor-pointer font-bold hover:border-b-2 border-violet-900">
@@ -16,11 +18,6 @@ const NavBar = () => {
       <Link to="/productos">
         <p className="cursor-pointer font-bold hover:border-b-2 border-violet-900">
           Productos
-        </p>
-      </Link>
-      <Link to="/categorias">
-        <p className="cursor-pointer font-bold hover:border-b-2 border-violet-900">
-          Categorias
         </p>
       </Link>
       <Link to="/nosotros">
