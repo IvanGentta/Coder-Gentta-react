@@ -1,24 +1,20 @@
 import { useState, React } from "react";
 import { AiFillMinusCircle, AiFillPlusCircle } from "react-icons/ai";
 
-const ItemCount = (props) => {
-  const [count, setCount] = useState(0);
+const ItemCount = ({ stock }) => {
+  const [count, setCount] = useState(1);
 
   //Funciones
   const plusOne = () => {
-    if (count < props.stock) {
-      setCount(count + 1);
+    if (count < stock) {
+      setCount((prev) => prev + 1);
     }
   };
 
   const minusOne = () => {
-    if (count > 0) {
-      setCount(count - 1);
+    if (count > 1) {
+      setCount((prev) => prev - 1);
     }
-  };
-
-  const onAdd = () => {
-    console.log(count);
   };
 
   return (
@@ -38,12 +34,6 @@ const ItemCount = (props) => {
           <AiFillPlusCircle />
         </button>
       </div>
-      <button
-        onClick={onAdd}
-        className="border-[3px] border-orange-500 p-1 rounded-xl bg-violet-400 font-semibold transition duration-150 ease-in hover:bg-violet-600"
-      >
-        Agregar al Carrito
-      </button>
     </div>
   );
 };

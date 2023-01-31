@@ -1,6 +1,5 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import ItemCount from "./ItemCount";
 
 const Item = (props) => {
   const { title, category, price, id, image } = props.data;
@@ -28,11 +27,6 @@ const Item = (props) => {
             >
               Detalles
             </Link>
-          </div>
-
-          {/* Item count */}
-          <div className="">
-            <ItemCount stock={5} />
           </div>
         </div>
       </div>
